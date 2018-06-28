@@ -1,18 +1,53 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Star Chart</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Star Chart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>STAR CHART</h1>
-      <button type="button" class="btn btn-primary btn-lg">Sign Up</button>
-    </body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <h1>STAR CHART</h1>
+  <!-- Sign up button -->
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".sign-up-modal-lg">Sign Up</button>
+  <!--Sign Up Modal-->
+  <div class="modal fade sign-up-modal-lg" tabindex="-1" role="dialog" aria-labelledby="signUp" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">&#9734; Thanks for choosing Star Chart! Sign up here! &#9734;</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+          <!-- sign up form -->
+          <form>
+            <div class="form-group">
+              <label for="signUpInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="signUpInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="signUpInputPassword1">Password</label>
+              <input type="password" class="form-control" id="signUpInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="signUpInputPassword2">Confirm Password</label>
+              <input type="password" class="form-control" id="signUpInputPassword2" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
