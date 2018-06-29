@@ -10,7 +10,18 @@ const createAccomplishmentError = (response) => {
   $('#create-accomplishment-form')[0].reset()
   console.log('accomplishment not logged properly!!!')
 }
+
+const getAccomplishmentsSuccess = (response) => {
+  console.log('retreived all accomplishments', response)
+}
+
+const getAccomplishmentsError = (response) => {
+  console.log('couldnt retreive all accomplishments', response.responseText)
+}
+
 module.exports = {
   createAccomplishmentSuccess,
-  createAccomplishmentError
+  createAccomplishmentError,
+  getAccomplishmentsSuccess,
+  getAccomplishmentsError
 }

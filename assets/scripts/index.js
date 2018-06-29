@@ -13,4 +13,5 @@ $(() => {
   $('#change-password-form').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
   $('#create-accomplishment-form').on('submit', accomplishmentEvents.onCreateAccomplishment)
+  $('#get-accomplishments').on('click', accomplishmentEvents.onGetAccomplishments)
 })

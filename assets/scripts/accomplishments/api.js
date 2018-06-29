@@ -14,6 +14,18 @@ const createAccomplishment = (data) => {
   })
 }
 
+const getAccomplishments = () => {
+  console.log('user is', store.user.email)
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/accomplishments',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  createAccomplishment
+  createAccomplishment,
+  getAccomplishments
 }

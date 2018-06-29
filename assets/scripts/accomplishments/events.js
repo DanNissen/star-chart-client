@@ -11,6 +11,14 @@ const onCreateAccomplishment = (event) => {
     .catch(accomplishmentUi.createAccomplishmentError)
 }
 
+const onGetAccomplishments = (event) => {
+  event.preventDefault()
+  accomplishmentApi.getAccomplishments()
+    .then(accomplishmentUi.getAccomplishmentsSuccess)
+    .catch(accomplishmentUi.getAccomplishmentsError)
+}
+
 module.exports = {
-  onCreateAccomplishment
+  onCreateAccomplishment,
+  onGetAccomplishments
 }
