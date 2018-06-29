@@ -1,4 +1,5 @@
 const config = require('../config')
+const store = require('../store')
 
 const signUp = (data) => {
   return $.ajax({
@@ -16,7 +17,20 @@ const signIn = (data) => {
   })
 }
 
+const changePassword = (data) => {
+  console.log('token is', store.user.token)
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/change-password',
+    data: data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
-  signIn
+  signIn,
+  changePassword
 }

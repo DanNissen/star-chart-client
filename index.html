@@ -51,7 +51,7 @@
 
   <!-- Sign in button -->
   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".sign-in-modal-lg">Sign In</button>
-  <!--Sign Up Modal-->
+  <!--Sign in Modal-->
   <div id="sign-in" class="modal fade sign-in-modal-lg" tabindex="-1" role="dialog" aria-labelledby="signIn" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -78,6 +78,37 @@
       </div>
     </div>
   </div>
+
+  <!-- change password button -->
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".change-password-modal-lg">Change Password</button>
+  <!--change password Modal-->
+  <div id="change-password" class="modal fade change-password-modal-lg" tabindex="-1" role="dialog" aria-labelledby="changePassword" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">&#9734; Change your password here! &#9734;</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+          <!-- change password form -->
+          <form id="change-password-form">
+            <div class="form-group">
+              <label for="changePasswordInputPassword1">Old Password</label>
+              <input name="passwords[old]" type="password" class="form-control" id="changePasswordInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="changePasswordInputPassword2">New Password</label>
+              <input name="passwords[new]" type="password" class="form-control" id="changePasswordInputPassword2" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Change Password</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>
