@@ -18,7 +18,7 @@
   <!-- Sign up button -->
   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".sign-up-modal-lg">Sign Up</button>
   <!--Sign Up Modal-->
-  <div id="sign-up"class="modal fade sign-up-modal-lg" tabindex="-1" role="dialog" aria-labelledby="signUp" aria-hidden="true">
+  <div id="sign-up" class="modal fade sign-up-modal-lg" tabindex="-1" role="dialog" aria-labelledby="signUp" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -43,6 +43,36 @@
               <input name="credentials[password_confirmation]" type="password" class="form-control" id="signUpInputPassword2" placeholder="Password">
             </div>
             <button type="submit" class="btn btn-primary">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sign in button -->
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".sign-in-modal-lg">Sign In</button>
+  <!--Sign Up Modal-->
+  <div id="sign-in" class="modal fade sign-in-modal-lg" tabindex="-1" role="dialog" aria-labelledby="signIn" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">&#9734; Welcome back to Star Chart! Sign in here! &#9734;</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+          <!-- sign in form -->
+          <form id="sign-in-form">
+            <div class="form-group">
+              <label for="signInInputEmail1">Email address</label>
+              <input name="credentials[email]" type="email" class="form-control" id="signInInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="signInInputPassword1">Password</label>
+              <input name="credentials[password]" type="password" class="form-control" id="signInInputPassword1" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Sign In</button>
           </form>
         </div>
       </div>
