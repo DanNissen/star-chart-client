@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Star Chart</title>
+  <title>&#9734; STAR CHART &#9734;</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags-->
@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <h1>STAR CHART</h1>
+  <h1>&#9734; STAR CHART &#9734;</h1>
   <!-- Sign up button -->
   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".sign-up-modal-lg">Sign Up</button>
   <!--Sign Up Modal-->
@@ -111,6 +111,52 @@
 
   <!-- sign out button -->
   <button id="sign-out" type="button" class="btn btn-primary btn-lg">Sign Out</button>
+
+  <br>
+  <!--ACCOMPLISHMENT FEATURES-->
+  <!-- create accomplishment button-->
+  <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target=".create-accomplishment-modal-lg">Log Accomplishment</button>
+  <!-- create accomplishment modal -->
+  <div id="create-accomplishment" class="modal fade create-accomplishment-modal-lg" tabindex="-1" role="dialog" aria-labelledby="createAccomplishment" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">&#9734; Log Your Accomplishment! &#9734;</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+          <!-- create accomplishment form -->
+          <form id="create-accomplishment-form">
+            <div class="form-group">
+              <label for="nameInput1">Accomplishment Name</label>
+              <input type="text" class="form-control" id="nameInput1" placeholder="Accomplishment Name">
+            </div>
+            <div class="form-group">
+              <label for="descriptionTextarea1">Decription</label>
+              <textarea class="form-control" placeholder="What did you do? Explain the Awesomness!" id="descriptionTextarea1" rows="2"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="dateInput1">Date Accomplished</label>
+              <input type="date" class="form-control" id="dateInput1">
+            </div>
+            <div class="form-group">
+              <label for="colorSelect1">Select Star Color</label>
+              <select class="form-control" id="colorSelect1">
+                <option>Red</option>
+                <option>Blue</option>
+                <option>Green</option>
+                <option>Yellow</option>
+                <option>Purple</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Log Accomplishment</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 
