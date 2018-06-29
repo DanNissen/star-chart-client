@@ -131,19 +131,19 @@
           <form id="create-accomplishment-form">
             <div class="form-group">
               <label for="nameInput1">Accomplishment Name</label>
-              <input type="text" class="form-control" id="nameInput1" placeholder="Accomplishment Name">
+              <input name="accomplishment[name]" type="text" class="form-control" id="nameInput1" placeholder="Accomplishment Name">
             </div>
             <div class="form-group">
               <label for="descriptionTextarea1">Decription</label>
-              <textarea class="form-control" placeholder="What did you do? Explain the Awesomness!" id="descriptionTextarea1" rows="2"></textarea>
+              <textarea name="accomplishment[description]" class="form-control" placeholder="What did you do? Explain the Awesomness!" id="descriptionTextarea1" rows="2"></textarea>
             </div>
             <div class="form-group">
               <label for="dateInput1">Date Accomplished</label>
-              <input type="date" class="form-control" id="dateInput1">
+              <input name="accomplishment[date_accomplished]" type="date" class="form-control" id="dateInput1">
             </div>
             <div class="form-group">
               <label for="colorSelect1">Select Star Color</label>
-              <select class="form-control" id="colorSelect1">
+              <select name="accomplishment[color]" class="form-control" id="colorSelect1">
                 <option>Red</option>
                 <option>Blue</option>
                 <option>Green</option>
