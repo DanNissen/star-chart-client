@@ -36,11 +36,21 @@ const changePasswordError = (response) => {
   console.log('change password failed!!!')
 }
 
+const signOutSuccess = () => {
+  console.log('sign out success')
+}
+
+const signOutError = (response) => {
+  console.log('sign out failed!!!', response.responseText)
+}
+
 module.exports = {
   signUpSuccess,
   signUpError,
   signInSuccess,
   signInError,
   changePasswordSuccess,
-  changePasswordError
+  changePasswordError,
+  signOutSuccess,
+  signOutError
 }
