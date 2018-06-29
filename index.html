@@ -168,6 +168,56 @@
   <button type="submit" class="btn btn-primary mb-2">Delete Accomplishment</button>
 </form>
 
+<!-- update accomplishment -->
+<!-- update accomplishment button-->
+<button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target=".update-accomplishment-modal-lg">Update Accomplishment</button>
+<!-- update accomplishment modal -->
+<div id="update-accomplishment" class="modal fade update-accomplishment-modal-lg" tabindex="-1" role="dialog" aria-labelledby="updateAccomplishment" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">&#9734; Update Your Accomplishment! &#9734;</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      </div>
+      <div class="modal-body">
+        <!-- update accomplishment form -->
+        <form id="update-accomplishment-form">
+          <div class="form-group">
+            <label for="idInput1">Accomplishment ID</label>
+            <input name="accomplishment[id]" type="text" class="form-control" id="idInput1" placeholder="Accomplishment ID">
+          </div>
+          <div class="form-group">
+            <label for="nameInput2">Accomplishment Name</label>
+            <input name="accomplishment[name]" type="text" class="form-control" id="nameInput2" placeholder="Accomplishment Name">
+          </div>
+          <div class="form-group">
+            <label for="descriptionTextarea2">Decription</label>
+            <textarea name="accomplishment[description]" class="form-control" placeholder="What did you do? Explain the Awesomness!" id="descriptionTextarea2" rows="2"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="dateInput2">Date Accomplished</label>
+            <input name="accomplishment[date_accomplished]" type="date" class="form-control" id="dateInput2">
+          </div>
+          <div class="form-group">
+            <label for="colorSelect2">Select Star Color</label>
+            <select name="accomplishment[color]" class="form-control" id="colorSelect2">
+              <option>Red</option>
+              <option>Blue</option>
+              <option>Green</option>
+              <option>Yellow</option>
+              <option>Purple</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Update Accomplishment</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 </body>
 
 </html>

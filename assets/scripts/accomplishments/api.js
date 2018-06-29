@@ -38,8 +38,22 @@ const deleteAccomplishment = (data) => {
   })
 }
 
+const updateAccomplishment = (data) => {
+  const url = config.apiUrl + '/accomplishments/' + data.accomplishment.id
+  console.log('url is:', url)
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/accomplishments/' + data.accomplishment.id,
+    data: data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createAccomplishment,
   getAccomplishments,
-  deleteAccomplishment
+  deleteAccomplishment,
+  updateAccomplishment
 }

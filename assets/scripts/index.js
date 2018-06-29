@@ -15,4 +15,5 @@ $(() => {
   $('#create-accomplishment-form').on('submit', accomplishmentEvents.onCreateAccomplishment)
   $('#get-accomplishments').on('click', accomplishmentEvents.onGetAccomplishments)
   $('#delete-accomplishment-form').on('submit', accomplishmentEvents.onDeleteAccomplishment)
+  $('#update-accomplishment-form').on('submit', accomplishmentEvents.onUpdateAccomplishment)
 })
