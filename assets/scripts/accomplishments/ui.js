@@ -19,9 +19,21 @@ const getAccomplishmentsError = (response) => {
   console.log('couldnt retreive all accomplishments', response.responseText)
 }
 
+const deleteAccomplishmentSuccess = (response) => {
+  $('#delete-accomplishment-form')[0].reset()
+  console.log('Accomplishment deleted!', response)
+}
+
+const deleteAccomplishmentError = (response) => {
+  $('#delete-accomplishment-form')[0].reset()
+  console.log('accomplishment not deleted properly!!!', response.responseText)
+}
+
 module.exports = {
   createAccomplishmentSuccess,
   createAccomplishmentError,
   getAccomplishmentsSuccess,
-  getAccomplishmentsError
+  getAccomplishmentsError,
+  deleteAccomplishmentSuccess,
+  deleteAccomplishmentError
 }

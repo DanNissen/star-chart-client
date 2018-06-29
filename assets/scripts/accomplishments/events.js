@@ -18,7 +18,17 @@ const onGetAccomplishments = (event) => {
     .catch(accomplishmentUi.getAccomplishmentsError)
 }
 
+const onDeleteAccomplishment = (event) => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log('id is', data)
+  accomplishmentApi.deleteAccomplishment(data)
+    .then(accomplishmentUi.deleteAccomplishmentSuccess)
+    .catch(accomplishmentUi.deleteAccomplishmentError)
+}
+
 module.exports = {
   onCreateAccomplishment,
-  onGetAccomplishments
+  onGetAccomplishments,
+  onDeleteAccomplishment
 }

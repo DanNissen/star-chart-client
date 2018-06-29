@@ -14,4 +14,5 @@ $(() => {
   $('#sign-out').on('click', authEvents.onSignOut)
   $('#create-accomplishment-form').on('submit', accomplishmentEvents.onCreateAccomplishment)
   $('#get-accomplishments').on('click', accomplishmentEvents.onGetAccomplishments)
+  $('#delete-accomplishment-form').on('submit', accomplishmentEvents.onDeleteAccomplishment)
 })
