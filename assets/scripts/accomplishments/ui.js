@@ -1,4 +1,5 @@
-// const store = require('../store')
+const showAccomplishmentsTemplate = require('../templates/accomplishment-view.handlebars')
+// const accomplishmentApi = require('./api')
 
 const createAccomplishmentSuccess = (response) => {
   $('#create-accomplishment-form')[0].reset()
@@ -11,8 +12,11 @@ const createAccomplishmentError = (response) => {
   console.log('accomplishment not logged properly!!!')
 }
 
-const getAccomplishmentsSuccess = (response) => {
-  console.log('retreived all accomplishments', response)
+const getAccomplishmentsSuccess = (data) => {
+  console.log('retreived all accomplishments', data)
+  const showAccomplishmentsHtml = showAccomplishmentsTemplate({ accomplishments: data.accomplishments })
+  $('.view-accomplishments').empty()
+  $('.view-accomplishments').append(showAccomplishmentsHtml)
 }
 
 const getAccomplishmentsError = (response) => {
@@ -20,23 +24,22 @@ const getAccomplishmentsError = (response) => {
 }
 
 const deleteAccomplishmentSuccess = (response) => {
-  $('#delete-accomplishment-form')[0].reset()
   console.log('Accomplishment deleted!', response)
+  $('.delete-accomplishment').modal('hide')
 }
 
 const deleteAccomplishmentError = (response) => {
-  $('#delete-accomplishment-form')[0].reset()
   console.log('accomplishment not deleted properly!!!', response.responseText)
 }
 
 const updateAccomplishmentSuccess = (response) => {
-  $('#update-accomplishment-form')[0].reset()
-  $('#update-accomplishment').modal('hide')
+  $('.update-accomplishment-form')[0].reset()
+  $('.update-accomplishment').modal('hide')
   console.log('Accomplishment updated!', response)
 }
 
 const updateAccomplishmentError = (response) => {
-  $('#update-accomplishment-form')[0].reset()
+  $('.update-accomplishment-form')[0].reset()
   console.log('accomplishment not updated properly!!!', response.responseText)
 }
 

@@ -20,7 +20,7 @@ const onGetAccomplishments = (event) => {
 
 const onDeleteAccomplishment = (event) => {
   event.preventDefault()
-  const data = getFormFields(event.target)
+  const data = $(event.target).data('id')
   console.log('id is', data)
   accomplishmentApi.deleteAccomplishment(data)
     .then(accomplishmentUi.deleteAccomplishmentSuccess)
@@ -30,8 +30,10 @@ const onDeleteAccomplishment = (event) => {
 const onUpdateAccomplishment = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
+  const id = $(event.target).data('id')
   console.log('data is', data)
-  accomplishmentApi.updateAccomplishment(data)
+  console.log('id is', id)
+  accomplishmentApi.updateAccomplishment(data, id)
     .then(accomplishmentUi.updateAccomplishmentSuccess)
     .catch(accomplishmentUi.updateAccomplishmentError)
 }

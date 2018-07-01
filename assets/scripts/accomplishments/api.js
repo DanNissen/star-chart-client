@@ -26,24 +26,24 @@ const getAccomplishments = () => {
 }
 
 const deleteAccomplishment = (data) => {
-  console.log('id is:', data.id)
-  const url = config.apiUrl + '/accomplishments/' + data.id
+  console.log('id is:', data)
+  const url = config.apiUrl + '/accomplishments/' + data
   console.log('url is:', url)
   return $.ajax({
     method: 'DELETE',
-    url: config.apiUrl + '/accomplishments/' + data.id,
+    url: config.apiUrl + '/accomplishments/' + data,
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
   })
 }
 
-const updateAccomplishment = (data) => {
-  const url = config.apiUrl + '/accomplishments/' + data.accomplishment.id
+const updateAccomplishment = (data, id) => {
+  const url = config.apiUrl + '/accomplishments/' + id
   console.log('url is:', url)
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/accomplishments/' + data.accomplishment.id,
+    url: config.apiUrl + '/accomplishments/' + id,
     data: data,
     headers: {
       Authorization: 'Token token=' + store.user.token
