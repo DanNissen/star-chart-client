@@ -1,20 +1,25 @@
 <ul class="nav nav-tabs accomplishment-tab">
-  {{#each accomplishments as |accomplishment|}}
-    <li><a data-toggle="tab" href="#accomplishment-{{accomplishment.id}}">{{accomplishment.date_accomplished}}</a></li>
+  {{#each days as |day|}}
+    <li><a data-toggle="tab" href="#accomplishment-{{@key}}">{{@key}}</a></li>
   {{/each}}
 </ul>
 
 <div class="tab-content">
-  {{#each accomplishments as |accomplishment|}}
-    <div id="accomplishment-{{accomplishment.id}}" class="tab-pane fade accomplishment-view" data-id= {{accomplishment.id}}>
-      <span class="{{accomplishment.color}}">&#9733;</span>
-      <span>Name: {{accomplishment.name}}</span>
-      <span>Description: {{accomplishment.description}}</span>
-      <br>
-      <button data-id= {{accomplishment.id}} type="button" class="btn btn-primary" data-toggle="modal" data-target=".update-accomplishment-modal-lg-{{accomplishment.id}}">Update Accomplishment</button>
-      <button data-id= {{accomplishment.id}} type="button" class="accomplishment-delete-button btn btn-primary" data-toggle="modal" data-target=".delete-accomplishment-modal-{{accomplishment.id}}">Delete Accomplishment</button>
+  {{#each days as |day|}}
+    <div id="accomplishment-{{@key}}" class="tab-pane fade accomplishment-view">
+      {{#each day as |accomplishment|}}
+        <span class="{{accomplishment.color}}">&#9733;</span>
+        <span>{{accomplishment.name}}:</span>
+        <span>{{accomplishment.description}}</span>
+        <button data-id= {{accomplishment.id}} type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".update-accomplishment-modal-lg-{{accomplishment.id}}">Update Accomplishment</button>
+        <button data-id= {{accomplishment.id}} type="button" class="accomplishment-delete-button btn btn-primary btn-sm" data-toggle="modal" data-target=".delete-accomplishment-modal-{{accomplishment.id}}">Delete Accomplishment</button><br>
+      {{/each}}
     </div>
+  {{/each}}
+</div>
 
+{{#each days as |day|}}
+  {{#each day as |accomplishment|}}
     <!-- delete accomplishment modal -->
     <div id="delete-accomplishment-{{accomplishment.id}}" class="delete-accomplishment modal fade delete-accomplishment-modal-{{accomplishment.id}}" tabindex="-1" role="dialog" aria-labelledby="deleteAccomplishment" aria-hidden="true">
       <div class="modal-dialog modal-lg">
@@ -27,14 +32,18 @@
           </div>
           <form data-id= {{accomplishment.id}} class="delete-accomplishment-form">
             <div class="modal-body">
-              <!-- delete button -->
+              delete button
               <button data-id= {{accomplishment.id}} type="submit" class="btn btn-primary">Yes, delete</button>
             </div>
           </form>
         </div>
       </div>
     </div>
+  {{/each}}
+{{/each}}
 
+{{#each days as |day|}}
+  {{#each day as |accomplishment|}}
     <!-- update accomplishment modal -->
     <div id="update-accomplishment-{{accomplishment.id}}" class="update-accomplishment modal fade update-accomplishment-modal-lg-{{accomplishment.id}}" tabindex="-1" role="dialog" aria-labelledby="updateAccomplishment" aria-hidden="true">
       <div class="modal-dialog modal-lg">
@@ -76,6 +85,5 @@
         </div>
       </div>
     </div>
-
   {{/each}}
-</div>
+{{/each}}

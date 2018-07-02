@@ -14,7 +14,7 @@ const createAccomplishmentError = (response) => {
 
 const getAccomplishmentsSuccess = (data) => {
   console.log('retreived all accomplishments', data)
-  const showAccomplishmentsHtml = showAccomplishmentsTemplate({ accomplishments: data.accomplishments })
+  const showAccomplishmentsHtml = showAccomplishmentsTemplate({days: data})
   $('.view-accomplishments').empty()
   $('.view-accomplishments').append(showAccomplishmentsHtml)
 }
