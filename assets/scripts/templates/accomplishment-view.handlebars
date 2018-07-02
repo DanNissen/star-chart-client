@@ -1,81 +1,81 @@
-    <ul class="nav nav-tabs">
-      {{#each accomplishments as |accomplishment|}}
-      <li><a data-toggle="tab" href="#accomplishment-{{accomplishment.id}}">{{accomplishment.date_accomplished}}</a></li>
-      {{/each}}
-    </ul>
+<ul class="nav nav-tabs accomplishment-tab">
+  {{#each accomplishments as |accomplishment|}}
+    <li><a data-toggle="tab" href="#accomplishment-{{accomplishment.id}}">{{accomplishment.date_accomplished}}</a></li>
+  {{/each}}
+</ul>
 
-    <div class="tab-content">
-        {{#each accomplishments as |accomplishment|}}
-        <div id="accomplishment-{{accomplishment.id}}" class="tab-pane fade" data-id={{accomplishment.id}}>
-          <p>Date: {{accomplishment.date_accomplished}}</p>
-          <p>Name: {{accomplishment.name}}</p>
-          <p>Description: {{accomplishment.description}}</p>
-          <p>Color: {{accomplishment.color}} </p>
-          <button data-id={{accomplishment.id}} type="button" class="btn btn-primary" data-toggle="modal" data-target=".update-accomplishment-modal-lg-{{accomplishment.id}}">Update Accomplishment</button>
-          <button data-id={{accomplishment.id}} type="button" class="accomplishment-delete-button btn btn-primary" data-toggle="modal" data-target=".delete-accomplishment-modal-{{accomplishment.id}}">Delete Accomplishment</button>
-        </div>
+<div class="tab-content">
+  {{#each accomplishments as |accomplishment|}}
+    <div id="accomplishment-{{accomplishment.id}}" class="tab-pane fade accomplishment-view" data-id= {{accomplishment.id}}>
+      <span class="{{accomplishment.color}}">&#9733;</span>
+      <span>Name: {{accomplishment.name}}</span>
+      <span>Description: {{accomplishment.description}}</span>
+      <br>
+      <button data-id= {{accomplishment.id}} type="button" class="btn btn-primary" data-toggle="modal" data-target=".update-accomplishment-modal-lg-{{accomplishment.id}}">Update Accomplishment</button>
+      <button data-id= {{accomplishment.id}} type="button" class="accomplishment-delete-button btn btn-primary" data-toggle="modal" data-target=".delete-accomplishment-modal-{{accomplishment.id}}">Delete Accomplishment</button>
+    </div>
 
-        <!-- delete accomplishment modal -->
-        <div id="delete-accomplishment-{{accomplishment.id}}" class="delete-accomplishment modal fade delete-accomplishment-modal-{{accomplishment.id}}" tabindex="-1" role="dialog" aria-labelledby="deleteAccomplishment" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h3 class="modal-title">&#9734; Are you sure you want to Delete?! &#9734;</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <!-- delete accomplishment modal -->
+    <div id="delete-accomplishment-{{accomplishment.id}}" class="delete-accomplishment modal fade delete-accomplishment-modal-{{accomplishment.id}}" tabindex="-1" role="dialog" aria-labelledby="deleteAccomplishment" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">&#9734; Are you sure you want to Delete?! &#9734;</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
-              </div>
-              <form data-id={{accomplishment.id}} class="delete-accomplishment-form">
-                <div class="modal-body">
-                <!-- delete button -->
-                    <button data-id={{accomplishment.id}} type="submit" class="btn btn-primary">Yes, delete</button>
-                  </div>
-              </form>
-            </div>
           </div>
+          <form data-id= {{accomplishment.id}} class="delete-accomplishment-form">
+            <div class="modal-body">
+              <!-- delete button -->
+              <button data-id= {{accomplishment.id}} type="submit" class="btn btn-primary">Yes, delete</button>
+            </div>
+          </form>
         </div>
+      </div>
+    </div>
 
-        <!-- update accomplishment modal -->
-        <div id="update-accomplishment-{{accomplishment.id}}" class="update-accomplishment modal fade update-accomplishment-modal-lg-{{accomplishment.id}}" tabindex="-1" role="dialog" aria-labelledby="updateAccomplishment" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h3 class="modal-title">&#9734; Update Your Accomplishment! &#9734;</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <!-- update accomplishment modal -->
+    <div id="update-accomplishment-{{accomplishment.id}}" class="update-accomplishment modal fade update-accomplishment-modal-lg-{{accomplishment.id}}" tabindex="-1" role="dialog" aria-labelledby="updateAccomplishment" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">&#9734; Update Your Accomplishment! &#9734;</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
+          </div>
+          <div class="modal-body">
+            <!-- update accomplishment form -->
+            <form id="update-accomplishment-form-{{accomplishment.id}}" class="update-accomplishment-form" data-id= {{accomplishment.id}}>
+              <div class="form-group">
+                <label for="nameInput2">Accomplishment Name</label>
+                <input name="accomplishment[name]" type="text" class="form-control" placeholder="Accomplishment Name">
               </div>
-              <div class="modal-body">
-                <!-- update accomplishment form -->
-                <form id="update-accomplishment-form-{{accomplishment.id}}" class="update-accomplishment-form" data-id={{accomplishment.id}}>
-                  <div class="form-group">
-                    <label for="nameInput2">Accomplishment Name</label>
-                    <input name="accomplishment[name]" type="text" class="form-control" placeholder="Accomplishment Name">
-                  </div>
-                  <div class="form-group">
-                    <label for="descriptionTextarea2">Decription</label>
-                    <textarea name="accomplishment[description]" class="form-control" placeholder="What did you do? Explain the Awesomness!" rows="2"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <label for="dateInput2">Date Accomplished</label>
-                    <input name="accomplishment[date_accomplished]" type="date" class="form-control">
-                  </div>
-                  <div class="form-group">
-                    <label for="colorSelect2">Select Star Color</label>
-                    <select name="accomplishment[color]" class="form-control">
+              <div class="form-group">
+                <label for="descriptionTextarea2">Decription</label>
+                <textarea name="accomplishment[description]" class="form-control" placeholder="What did you do? Explain the Awesomness!" rows="2"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="dateInput2">Date Accomplished</label>
+                <input name="accomplishment[date_accomplished]" type="date" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="colorSelect2">Select Star Color</label>
+                <select name="accomplishment[color]" class="form-control">
                       <option>Red</option>
                       <option>Blue</option>
                       <option>Green</option>
                       <option>Yellow</option>
                       <option>Purple</option>
                     </select>
-                  </div>
-                  <button data-id={{accomplishment.id}} type="submit" class=" update-accomplishment btn btn-primary">Update Accomplishment</button>
-                </form>
               </div>
-            </div>
+              <button data-id= {{accomplishment.id}} type="submit" class=" update-accomplishment btn btn-primary">Update Accomplishment</button>
+            </form>
           </div>
         </div>
-
-        {{/each}}
+      </div>
     </div>
+
+  {{/each}}
+</div>

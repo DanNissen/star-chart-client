@@ -14,9 +14,29 @@
 </head>
 
 <body>
-  <h1>&#9734; STAR CHART &#9734;</h1>
-  <!-- Sign up button -->
-  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".sign-up-modal-lg">Sign Up</button>
+  <div class="title-bar">
+    <h1>&#9734; STAR CHART &#9734;</h1>
+    <button type="button" class="btn btn-primary signed-out" data-toggle="modal" data-target=".sign-up-modal-lg">Sign Up</button>
+    <!-- Sign in button -->
+    <button type="button" class="btn btn-primary signed-out" data-toggle="modal" data-target=".sign-in-modal-lg">Sign In</button>
+    <!-- change password button -->
+    <button type="button" class="btn btn-primary signed-in" data-toggle="modal" data-target=".change-password-modal-lg">Change Password</button>
+    <!-- sign out button -->
+    <button id="sign-out" type="button" class="btn btn-primary signed-in">Sign Out</button>
+  </div>
+  <br>
+  <br>
+
+  <div class=".container-fluid signed-in main-content">
+    <!-- create accomplishment button-->
+    <button type="button" class="btn btn-primary col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" data-toggle="modal" data-target=".create-accomplishment-modal-lg">Log Accomplishment</button>
+    <!-- Get accomplishments button -->
+    <button id="get-accomplishments" type="button" class="btn btn-primary col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">Get all accomplishments</button>
+  </div>
+  <br>
+  <br>
+  <div class="signed-in view-accomplishments"></div>
+  <footer>&#9734; STAR CHART &#9734;</footer>
   <!--Sign Up Modal-->
   <div id="sign-up" class="modal fade sign-up-modal-lg" tabindex="-1" role="dialog" aria-labelledby="signUp" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -49,8 +69,6 @@
     </div>
   </div>
 
-  <!-- Sign in button -->
-  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".sign-in-modal-lg">Sign In</button>
   <!--Sign in Modal-->
   <div id="sign-in" class="modal fade sign-in-modal-lg" tabindex="-1" role="dialog" aria-labelledby="signIn" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -79,8 +97,6 @@
     </div>
   </div>
 
-  <!-- change password button -->
-  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".change-password-modal-lg">Change Password</button>
   <!--change password Modal-->
   <div id="change-password" class="modal fade change-password-modal-lg" tabindex="-1" role="dialog" aria-labelledby="changePassword" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -108,14 +124,8 @@
       </div>
     </div>
   </div>
-
-  <!-- sign out button -->
-  <button id="sign-out" type="button" class="btn btn-primary btn-lg">Sign Out</button>
-
   <br>
   <!--ACCOMPLISHMENT FEATURES-->
-  <!-- create accomplishment button-->
-  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".create-accomplishment-modal-lg">Log Accomplishment</button>
   <!-- create accomplishment modal -->
   <div id="create-accomplishment" class="modal fade create-accomplishment-modal-lg" tabindex="-1" role="dialog" aria-labelledby="createAccomplishment" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -157,12 +167,6 @@
       </div>
     </div>
   </div>
-
-  <!-- Get accomplishments button -->
-  <button id="get-accomplishments" type="button" class="btn btn-primary btn-lg">Get all accomplishments</button>
-<br> <br>
-<div class="view-accomplishments"> THIS IS WHERE YOU WILL VIEW ACCOMPLISHMENTS</div>
-
 </body>
 
 </html>
