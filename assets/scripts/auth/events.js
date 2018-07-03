@@ -36,9 +36,14 @@ const onSignOut = (event) => {
     .catch(authUi.signOutError)
 }
 
+const onResetAuthForms = () => {
+  authUi.resetAuthForms()
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onResetAuthForms
 }

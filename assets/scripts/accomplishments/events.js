@@ -38,9 +38,20 @@ const onUpdateAccomplishment = (event) => {
     .catch(accomplishmentUi.updateAccomplishmentError)
 }
 
+const onResetAccomplishmentForms = () => {
+  accomplishmentUi.resetAccomplishmentForms()
+}
+
+const onResetUpdateForms = () => {
+  console.log('reset update event')
+  accomplishmentUi.resetUpdateForms()
+}
+
 module.exports = {
   onCreateAccomplishment,
   onGetAccomplishments,
   onDeleteAccomplishment,
-  onUpdateAccomplishment
+  onUpdateAccomplishment,
+  onResetAccomplishmentForms,
+  onResetUpdateForms
 }

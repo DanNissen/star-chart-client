@@ -46,7 +46,7 @@
   <div class="signed-in view-accomplishments"></div>
   <footer>&#9734; STAR CHART &#9734;</footer>
   <!--Sign Up Modal-->
-  <div id="sign-up" class="modal fade sign-up-modal-lg" tabindex="-1" role="dialog" aria-labelledby="signUp" aria-hidden="true">
+  <div id="sign-up" class="auth-modal modal fade sign-up-modal-lg" tabindex="-1" role="dialog" aria-labelledby="signUp" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -78,7 +78,7 @@
   </div>
 
   <!--Sign in Modal-->
-  <div id="sign-in" class="modal fade sign-in-modal-lg" tabindex="-1" role="dialog" aria-labelledby="signIn" aria-hidden="true">
+  <div id="sign-in" class="auth-modal modal fade sign-in-modal-lg" tabindex="-1" role="dialog" aria-labelledby="signIn" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -106,7 +106,7 @@
   </div>
 
   <!--change password Modal-->
-  <div id="change-password" class="modal fade change-password-modal-lg" tabindex="-1" role="dialog" aria-labelledby="changePassword" aria-hidden="true">
+  <div id="change-password" class="auth-modal modal fade change-password-modal-lg" tabindex="-1" role="dialog" aria-labelledby="changePassword" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -135,7 +135,7 @@
   <br>
   <!--ACCOMPLISHMENT FEATURES-->
   <!-- create accomplishment modal -->
-  <div id="create-accomplishment" class="modal fade create-accomplishment-modal-lg" tabindex="-1" role="dialog" aria-labelledby="createAccomplishment" aria-hidden="true">
+  <div id="create-accomplishment" class="accomplishment-modal modal fade create-accomplishment-modal-lg" tabindex="-1" role="dialog" aria-labelledby="createAccomplishment" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -175,6 +175,23 @@
       </div>
     </div>
   </div>
+
+<!-- messaging modal  -->
+<div id="message-modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="message-title" class="modal-title"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p id="message-text"></p>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 
 </html>

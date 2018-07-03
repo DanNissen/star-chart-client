@@ -27,7 +27,7 @@
 {{#each days as |day|}}
   {{#each day as |accomplishment|}}
     <!-- delete accomplishment modal -->
-    <div id="delete-accomplishment-{{accomplishment.id}}" class="delete-accomplishment modal fade delete-accomplishment-modal-{{accomplishment.id}}" tabindex="-1" role="dialog" aria-labelledby="deleteAccomplishment" aria-hidden="true">
+    <div id="delete-accomplishment-{{accomplishment.id}}" class="accomplishment-modal-handlebars accomplishment-modal delete-accomplishment modal fade delete-accomplishment-modal-{{accomplishment.id}}" tabindex="-1" role="dialog" aria-labelledby="deleteAccomplishment" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
@@ -38,7 +38,7 @@
           </div>
           <form data-id= {{accomplishment.id}} class="delete-accomplishment-form">
             <div class="modal-body">
-              delete button
+              <!-- delete button -->
               <button data-id= {{accomplishment.id}} type="submit" class="btn btn-primary">Yes, delete</button>
             </div>
           </form>
@@ -51,7 +51,7 @@
 {{#each days as |day|}}
   {{#each day as |accomplishment|}}
     <!-- update accomplishment modal -->
-    <div id="update-accomplishment-{{accomplishment.id}}" class="update-accomplishment modal fade update-accomplishment-modal-lg-{{accomplishment.id}}" tabindex="-1" role="dialog" aria-labelledby="updateAccomplishment" aria-hidden="true">
+    <div id="update-accomplishment-{{accomplishment.id}}" class="accomplishment-modal-handlebars update-accomplishment modal fade update-accomplishment-modal-lg-{{accomplishment.id}}" tabindex="-1" role="dialog" aria-labelledby="updateAccomplishment" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
@@ -85,7 +85,7 @@
                       <option>Purple</option>
                     </select>
               </div>
-              <button data-id= {{accomplishment.id}} type="submit" class=" update-accomplishment btn btn-primary">Update Accomplishment</button>
+              <button data-id= {{accomplishment.id}} type="submit" class="update-accomplishment btn btn-primary">Update Accomplishment</button>
             </form>
           </div>
         </div>
