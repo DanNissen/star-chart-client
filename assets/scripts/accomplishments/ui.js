@@ -1,5 +1,5 @@
 const showAccomplishmentsTemplate = require('../templates/accomplishment-view.handlebars')
-// const accomplishmentApi = require('./api')
+const accomplishmentApi = require('./api')
 
 const createAccomplishmentSuccess = (response) => {
   $('#create-accomplishment-form')[0].reset()
@@ -38,6 +38,9 @@ const deleteAccomplishmentSuccess = (response) => {
   $('#message-modal').modal('show')
   $('#message-title').text('Success!!')
   $('#message-text').text(`You have successfully deleted your accomplishment!`)
+  accomplishmentApi.getAccomplishments()
+    .then(getAccomplishmentsSuccess)
+    .catch(getAccomplishmentsError)
 }
 
 const deleteAccomplishmentError = (response) => {
@@ -48,12 +51,18 @@ const deleteAccomplishmentError = (response) => {
 }
 
 const updateAccomplishmentSuccess = (response) => {
+  console.log(response)
+  const key = response.accomplishment.date_accomplished
+  console.log('key is', key)
+  console.log('Accomplishment updated!', response)
   $('.update-accomplishment-form')[0].reset()
   $('.update-accomplishment').modal('hide')
-  console.log('Accomplishment updated!', response)
   $('#message-modal').modal('show')
   $('#message-title').text('Success!!')
   $('#message-text').text(`You have successfully updated your accomplishment!`)
+  accomplishmentApi.getAccomplishments()
+    .then(getAccomplishmentsSuccess)
+    .catch(getAccomplishmentsError)
 }
 
 const updateAccomplishmentError = (response) => {
@@ -70,7 +79,9 @@ const resetAccomplishmentForms = () => {
 
 const resetUpdateForms = () => {
   console.log('reset update form')
-  $('.update-accomplishment-form')[0].reset()
+  $('.update-accomplishment-form input').val('')
+  $('.update-accomplishment-form textarea').val('')
+  $('.update-accomplishment-form select').val('Red')
 }
 
 module.exports = {

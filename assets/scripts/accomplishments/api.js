@@ -25,6 +25,17 @@ const getAccomplishments = () => {
   })
 }
 
+const getAccomplishment = (data) => {
+  console.log('user is', store.user.email)
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/accomplishments/' + data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const deleteAccomplishment = (data) => {
   console.log('id is:', data)
   const url = config.apiUrl + '/accomplishments/' + data
@@ -54,6 +65,7 @@ const updateAccomplishment = (data, id) => {
 module.exports = {
   createAccomplishment,
   getAccomplishments,
+  getAccomplishment,
   deleteAccomplishment,
   updateAccomplishment
 }
