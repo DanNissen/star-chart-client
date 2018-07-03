@@ -14,24 +14,32 @@
 </head>
 
 <body>
-  <div class="title-bar">
-    <h1>&#9734; STAR CHART &#9734;</h1>
-    <button type="button" class="btn btn-primary signed-out" data-toggle="modal" data-target=".sign-up-modal-lg">Sign Up</button>
-    <!-- Sign in button -->
-    <button type="button" class="btn btn-primary signed-out" data-toggle="modal" data-target=".sign-in-modal-lg">Sign In</button>
-    <!-- change password button -->
-    <button type="button" class="btn btn-primary signed-in" data-toggle="modal" data-target=".change-password-modal-lg">Change Password</button>
-    <!-- sign out button -->
-    <button id="sign-out" type="button" class="btn btn-primary signed-in">Sign Out</button>
+  <div class="container-fluid title-bar">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <h1>&#9734; STAR CHART &#9734;</h1>
+      </div>
+      <div class="row">
+        <div class="btn-group signed-out" role="group">
+          <!-- sign up button -->
+          <button type="button" class="btn btn-primary signed-out" data-toggle="modal" data-target=".sign-up-modal-lg">Sign Up</button>
+          <!-- Sign in button -->
+          <button type="button" class="btn btn-primary signed-out" data-toggle="modal" data-target=".sign-in-modal-lg">Sign In</button>
+        </div>
+        <div class="btn-group signed-in" role="group">
+          <!-- change password button -->
+          <button type="button" class="btn btn-primary signed-in" data-toggle="modal" data-target=".change-password-modal-lg">Change Password</button>
+          <!-- sign out button -->
+          <button id="sign-out" type="button" class="btn btn-primary signed-in">Sign Out</button>
+        </div>
+      </div>
+    </div>
   </div>
-  <br>
-  <br>
-
   <div class=".container-fluid signed-in main-content">
     <!-- create accomplishment button-->
-    <button type="button" class="btn btn-primary col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" data-toggle="modal" data-target=".create-accomplishment-modal-lg">Log Accomplishment</button>
+    <button type="button" class="btn btn-primary col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 main-content-button" data-toggle="modal" data-target=".create-accomplishment-modal-lg">Log Accomplishment</button>
     <!-- Get accomplishments button -->
-    <button id="get-accomplishments" type="button" class="btn btn-primary col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">Get all accomplishments</button>
+    <button id="get-accomplishments" type="button" class="btn btn-primary col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 main-content-button">Get all accomplishments</button>
   </div>
   <br>
   <br>

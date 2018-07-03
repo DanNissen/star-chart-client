@@ -13,10 +13,11 @@ const signUpError = (response) => {
 
 const signInSuccess = (response) => {
   store.user = response.user
+  store.signed_in = true
   $('#sign-in-form')[0].reset()
   $('#sign-in').modal('hide')
-  $('.signed-in').css('display', 'block')
-  $('.signed-out').css('display', 'none')
+  $('.signed-in').css('visibility', 'visible')
+  $('.signed-out').css('visibility', 'hidden')
   // console.log('sign in success')
   // console.log('user is', store.user)
   // console.log('token is', store.user.token)
@@ -40,8 +41,8 @@ const changePasswordError = (response) => {
 
 const signOutSuccess = () => {
   console.log('sign out success')
-  $('.signed-in').css('display', 'none')
-  $('.signed-out').css('display', 'block')
+  $('.signed-in').css('visibility', 'hidden')
+  $('.signed-out').css('visibility', 'visible')
   $('.view-accomplishments').empty()
 }
 

@@ -8,11 +8,17 @@
   {{#each days as |day|}}
     <div id="accomplishment-{{@key}}" class="tab-pane fade accomplishment-view">
       {{#each day as |accomplishment|}}
-        <span class="{{accomplishment.color}}">&#9733;</span>
-        <span>{{accomplishment.name}}:</span>
-        <span>{{accomplishment.description}}</span>
-        <button data-id= {{accomplishment.id}} type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".update-accomplishment-modal-lg-{{accomplishment.id}}">Update Accomplishment</button>
-        <button data-id= {{accomplishment.id}} type="button" class="accomplishment-delete-button btn btn-primary btn-sm" data-toggle="modal" data-target=".delete-accomplishment-modal-{{accomplishment.id}}">Delete Accomplishment</button><br>
+        <div class="row">
+          <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 col-xl-7">
+            <span class="{{accomplishment.color}}">&#9733;</span>
+            <span>{{accomplishment.name}}:</span>
+            <span>{{accomplishment.description}}</span>
+          </div>
+          <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+            <button data-id= {{accomplishment.id}} type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".update-accomplishment-modal-lg-{{accomplishment.id}}">Update</button>
+            <button data-id= {{accomplishment.id}} type="button" class="accomplishment-delete-button btn btn-primary btn-sm" data-toggle="modal" data-target=".delete-accomplishment-modal-{{accomplishment.id}}">Delete</button>
+          </div>
+        </div>
       {{/each}}
     </div>
   {{/each}}

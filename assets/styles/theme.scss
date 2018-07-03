@@ -8,26 +8,30 @@ body {
 }
 
 .signed-in {
-  display: none;
-  align-content: center;
+  visibility: hidden;
   text-align: center;
+  float: inherit;
 }
 
 .signed-out {
-  align-content: center;
   text-align: center;
+  float: inherit;
 }
 
 .title-bar {
   text-align: center;
   background-color: $light-blue;
-  opacity: 70%;
 }
 
 .main-content {
   align-content: center;
   text-align: center;
-  height: 70%;
+  border-top: 20px;
+  height: 50px;
+}
+
+.main-content-button {
+  top: 50%;
 }
 
 footer {
@@ -43,8 +47,8 @@ footer {
 
 .accomplishment-view {
   background-color: $light-blue;
-  text-align: center;
-  align-content: center;
+  text-align: left;
+  align-content: left;
   font-size: 20px;
 }
 
@@ -53,6 +57,12 @@ footer {
   font-size: 15px;
   font-weight: bold;
   color: black;
+}
+
+.tab-content {
+  height: 200px;
+  top: 20%;
+  margin-top: 50px;
 }
 
 .Red {
