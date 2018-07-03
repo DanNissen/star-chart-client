@@ -8,6 +8,9 @@ const createAccomplishmentSuccess = (response) => {
   $('#message-modal').modal('show')
   $('#message-title').text('Success!!')
   $('#message-text').text(`You have successfully logged your accomplishment!`)
+  accomplishmentApi.getAccomplishments()
+    .then(getAccomplishmentsSuccess)
+    .catch(getAccomplishmentsError)
 }
 
 const createAccomplishmentError = (response) => {
@@ -20,9 +23,13 @@ const createAccomplishmentError = (response) => {
 
 const getAccomplishmentsSuccess = (data) => {
   console.log('retreived all accomplishments', data)
-  const showAccomplishmentsHtml = showAccomplishmentsTemplate({days: data})
-  $('.view-accomplishments').empty()
-  $('.view-accomplishments').append(showAccomplishmentsHtml)
+  if (Object.keys(data).length === 0) {
+    $('.view-accomplishments').append('<h1>&#9734; Nothing has been tracked yet, Please click Log Accomplishment to start! &#9734;</h1>')
+  } else {
+    const showAccomplishmentsHtml = showAccomplishmentsTemplate({days: data})
+    $('.view-accomplishments').empty()
+    $('.view-accomplishments').append(showAccomplishmentsHtml)
+  }
 }
 
 const getAccomplishmentsError = (response) => {
