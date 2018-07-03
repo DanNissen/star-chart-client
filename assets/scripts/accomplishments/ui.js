@@ -24,6 +24,7 @@ const createAccomplishmentError = (response) => {
 const getAccomplishmentsSuccess = (data) => {
   console.log('retreived all accomplishments', data)
   if (Object.keys(data).length === 0) {
+    $('.view-accomplishments').empty()
     $('.view-accomplishments').append('<h1>&#9734; Nothing has been tracked yet, Please click Log Accomplishment to start! &#9734;</h1>')
   } else {
     const showAccomplishmentsHtml = showAccomplishmentsTemplate({days: data})
