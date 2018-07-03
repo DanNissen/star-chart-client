@@ -6,7 +6,7 @@ const signUpSuccess = (response) => {
   console.log('sign up success')
   $('#message-modal').modal('show')
   $('#message-title').text('Success!!')
-  $('#message-text').text('Thanks for signing up, please sign in to acheive your goals!')
+  $('#message-text').text('Thanks for signing up, please sign in to achieve your goals!')
 }
 
 const signUpError = (response) => {

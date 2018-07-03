@@ -18,7 +18,7 @@ const createAccomplishmentError = (response) => {
   console.log('accomplishment not logged properly!!!')
   $('#message-modal').modal('show')
   $('#message-title').text('Uh Oh!!')
-  $('#message-text').text('Something has gone wrong, your accomplishments could not be created. Please try again.')
+  $('#message-text').text('Something has gone wrong, your accomplishments could not be created. Remember Name, Date, and Color are required. Please try again.')
 }
 
 const getAccomplishmentsSuccess = (data) => {
@@ -78,7 +78,7 @@ const updateAccomplishmentError = (response) => {
   console.log('accomplishment not updated properly!!!', response.responseText)
   $('#message-modal').modal('show')
   $('#message-title').text('Uh Oh!!')
-  $('#message-text').text('Something has gone wrong, your accomplishment could not be updated. Please try again.')
+  $('#message-text').text('Something has gone wrong, your accomplishment could not be updated. Remember Name, Date, and Color are required. Please try again.')
 }
 
 const resetAccomplishmentForms = () => {
