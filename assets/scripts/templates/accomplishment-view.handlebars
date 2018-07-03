@@ -65,18 +65,18 @@
             <form id="update-accomplishment-form-{{accomplishment.id}}" class="update-accomplishment-form" data-id= {{accomplishment.id}}>
               <div class="form-group">
                 <label for="nameInput2">Accomplishment Name</label>
-                <input name="accomplishment[name]" type="text" class="form-control" placeholder="Accomplishment Name">
+                <input name="accomplishment[name]" type="text" class="form-control" placeholder="{{accomplishment.name}}">
               </div>
               <div class="form-group">
                 <label for="descriptionTextarea2">Decription</label>
-                <textarea name="accomplishment[description]" class="form-control" placeholder="What did you do? Explain the Awesomness!" rows="2"></textarea>
+                <textarea name="accomplishment[description]" class="form-control" placeholder="{{accomplishment.description}}" rows="2"></textarea>
               </div>
               <div class="form-group">
-                <label for="dateInput2">Date Accomplished</label>
-                <input name="accomplishment[date_accomplished]" type="date" class="form-control">
+                <label for="dateInput2">Date Accomplished - Is {{accomplishment.date_accomplished}} still correct?</label>
+                <input name="accomplishment[date_accomplished]" type="date" class="form-control" >
               </div>
               <div class="form-group">
-                <label for="colorSelect2">Select Star Color</label>
+                <label for="colorSelect2">Star Color is {{accomplishment.color}}, do you want to change that?</label>
                 <select name="accomplishment[color]" class="form-control">
                       <option>Red</option>
                       <option>Blue</option>
