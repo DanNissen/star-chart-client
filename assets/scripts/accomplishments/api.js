@@ -2,8 +2,8 @@ const config = require('../config')
 const store = require('../store')
 
 const createAccomplishment = (data) => {
-  console.log('data passed to api is', data)
-  console.log('user is', store.user.email)
+  // console.log('data passed to api is', data)
+  // console.log('user is', store.user.email)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/accomplishments',
@@ -15,7 +15,7 @@ const createAccomplishment = (data) => {
 }
 
 const getAccomplishments = () => {
-  console.log('user is', store.user.email)
+  // console.log('user is', store.user.email)
   return $.ajax({
     method: 'GET',
     url: config.apiUrl + '/accomplishments',
@@ -25,21 +25,21 @@ const getAccomplishments = () => {
   })
 }
 
-const getAccomplishment = (data) => {
-  console.log('user is', store.user.email)
-  return $.ajax({
-    method: 'GET',
-    url: config.apiUrl + '/accomplishments/' + data,
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
+// const getAccomplishment = (data) => {
+//   console.log('user is', store.user.email)
+//   return $.ajax({
+//     method: 'GET',
+//     url: config.apiUrl + '/accomplishments/' + data,
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
 
 const deleteAccomplishment = (data) => {
-  console.log('id is:', data)
-  const url = config.apiUrl + '/accomplishments/' + data
-  console.log('url is:', url)
+  // console.log('id is:', data)
+  // const url = config.apiUrl + '/accomplishments/' + data
+  // console.log('url is:', url)
   return $.ajax({
     method: 'DELETE',
     url: config.apiUrl + '/accomplishments/' + data,
@@ -50,8 +50,8 @@ const deleteAccomplishment = (data) => {
 }
 
 const updateAccomplishment = (data, id) => {
-  const url = config.apiUrl + '/accomplishments/' + id
-  console.log('url is:', url)
+  // const url = config.apiUrl + '/accomplishments/' + id
+  // console.log('url is:', url)
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/accomplishments/' + id,
@@ -65,7 +65,7 @@ const updateAccomplishment = (data, id) => {
 module.exports = {
   createAccomplishment,
   getAccomplishments,
-  getAccomplishment,
+  // getAccomplishment,
   deleteAccomplishment,
   updateAccomplishment
 }

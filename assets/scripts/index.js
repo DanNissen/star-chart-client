@@ -17,6 +17,7 @@ $(() => {
   $('.view-accomplishments').on('submit', '.delete-accomplishment-form', accomplishmentEvents.onDeleteAccomplishment)
   $('.view-accomplishments').on('submit', '.update-accomplishment-form', accomplishmentEvents.onUpdateAccomplishment)
   $('.auth-modal').on('hidden.bs.modal', authEvents.onResetAuthForms)
-  $('.view-accomplishments').on('hidden.bs.modal', '.accomplishment-modal-handlebars', accomplishmentEvents.onResetUpdateForms)
+  // $('.view-accomplishments').on('hidden.bs.modal', '.accomplishment-modal-handlebars', accomplishmentEvents.onResetUpdateForms)
   $('.accomplishment-modal').on('hidden.bs.modal', accomplishmentEvents.onResetAccomplishmentForms)
+  $('.info').on('click', authEvents.onInfoButton)
 })

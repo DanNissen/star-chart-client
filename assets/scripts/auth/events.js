@@ -5,7 +5,7 @@ const authUi = require('./ui')
 const onSignUp = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('data is', data)
+  // console.log('data is', data)
   authApi.signUp(data)
     .then(authUi.signUpSuccess)
     .catch(authUi.signUpError)
@@ -14,7 +14,7 @@ const onSignUp = (event) => {
 const onSignIn = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('data is', data)
+  // console.log('data is', data)
   authApi.signIn(data)
     .then(authUi.signInSuccess)
     .catch(authUi.signInError)
@@ -23,7 +23,7 @@ const onSignIn = (event) => {
 const onChangePassword = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('data is', data)
+  // console.log('data is', data)
   authApi.changePassword(data)
     .then(authUi.changePasswordSuccess)
     .catch(authUi.changePasswordError)
@@ -40,10 +40,15 @@ const onResetAuthForms = () => {
   authUi.resetAuthForms()
 }
 
+const onInfoButton = () => {
+  authUi.infoButton()
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut,
-  onResetAuthForms
+  onResetAuthForms,
+  onInfoButton
 }
