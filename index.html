@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>&#9734; STAR CHART &#9734;</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <div class="container-fluid title-bar">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <h1>&#9734; STAR CHART &#9734;</h1>
+      </div>
+      <div class="row">
+        <div class="btn-group signed-out" role="group">
+          <!-- sign up button -->
+          <button type="button" class="btn btn-primary signed-out" data-toggle="modal" data-target=".sign-up-modal-lg">Sign Up</button>
+          <!-- Sign in button -->
+          <button type="button" class="btn btn-primary signed-out" data-toggle="modal" data-target=".sign-in-modal-lg">Sign In</button>
+          <button type="button" class="btn btn-primary signed-out info">Why Star Chart?</button>
+        </div>
+        <div class="btn-group signed-in" role="group">
+          <!-- change password button -->
+          <button type="button" class="btn btn-primary signed-in" data-toggle="modal" data-target=".change-password-modal-lg">Change Password</button>
+          <!-- sign out button -->
+          <button id="sign-out" type="button" class="btn btn-primary signed-in">Sign Out</button>
+          <button type="button" class="btn btn-primary signed-in info">Why Star Chart?</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class=".container-fluid signed-in main-content">
+    <!-- create accomplishment button-->
+    <button type="button" class="btn btn-primary col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 main-content-button" data-toggle="modal" data-target=".create-accomplishment-modal-lg">Log Accomplishment</button>
+    <!-- Get accomplishments button -->
+    <button id="get-accomplishments" type="button" class="btn btn-primary col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 main-content-button">Get all accomplishments</button>
+  </div>
+  <br>
+  <br>
+  <div class="signed-in view-accomplishments"></div>
+  <footer>&#9734; STAR CHART &#9734;</footer>
+  <!--Sign Up Modal-->
+  <div id="sign-up" class="auth-modal modal fade sign-up-modal-lg" tabindex="-1" role="dialog" aria-labelledby="signUp" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">&#9734; Thanks for choosing Star Chart! Sign up here! &#9734;</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+          <!-- sign up form -->
+          <form id="sign-up-form">
+            <div class="form-group">
+              <label for="signUpInputEmail1">Email address</label>
+              <input name="credentials[email]" type="email" class="form-control" id="signUpInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="signUpInputPassword1">Password</label>
+              <input name="credentials[password]" type="password" class="form-control" id="signUpInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="signUpInputPassword2">Confirm Password</label>
+              <input name="credentials[password_confirmation]" type="password" class="form-control" id="signUpInputPassword2" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Sign in Modal-->
+  <div id="sign-in" class="auth-modal modal fade sign-in-modal-lg" tabindex="-1" role="dialog" aria-labelledby="signIn" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">&#9734; Welcome back to Star Chart! Sign in here! &#9734;</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+          <!-- sign in form -->
+          <form id="sign-in-form">
+            <div class="form-group">
+              <label for="signInInputEmail1">Email address</label>
+              <input name="credentials[email]" type="email" class="form-control" id="signInInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="signInInputPassword1">Password</label>
+              <input name="credentials[password]" type="password" class="form-control" id="signInInputPassword1" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Sign In</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--change password Modal-->
+  <div id="change-password" class="auth-modal modal fade change-password-modal-lg" tabindex="-1" role="dialog" aria-labelledby="changePassword" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">&#9734; Change your password here! &#9734;</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+          <!-- change password form -->
+          <form id="change-password-form">
+            <div class="form-group">
+              <label for="changePasswordInputPassword1">Old Password</label>
+              <input name="passwords[old]" type="password" class="form-control" id="changePasswordInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="changePasswordInputPassword2">New Password</label>
+              <input name="passwords[new]" type="password" class="form-control" id="changePasswordInputPassword2" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Change Password</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <!--ACCOMPLISHMENT FEATURES-->
+  <!-- create accomplishment modal -->
+  <div id="create-accomplishment" class="accomplishment-modal modal fade create-accomplishment-modal-lg" tabindex="-1" role="dialog" aria-labelledby="createAccomplishment" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">&#9734; Log Your Accomplishment! &#9734;</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+          <!-- create accomplishment form -->
+          <form id="create-accomplishment-form">
+            <div class="form-group">
+              <label for="nameInput1">Accomplishment Name</label>
+              <input name="accomplishment[name]" type="text" class="form-control" id="nameInput1" placeholder="Accomplishment Name">
+            </div>
+            <div class="form-group">
+              <label for="descriptionTextarea1">Decription</label>
+              <input type="text" name="accomplishment[description]" class="form-control" placeholder="What did you do? Explain the Awesomness!" id="descriptionTextarea1">
+            </div>
+            <div class="form-group">
+              <label for="dateInput1">Date Accomplished</label>
+              <input name="accomplishment[date_accomplished]" type="date" class="form-control" id="dateInput1">
+            </div>
+            <div class="form-group">
+              <label for="colorSelect1">Select Star Color</label>
+              <select name="accomplishment[color]" class="form-control" id="colorSelect1">
+                <option>Red</option>
+                <option>Blue</option>
+                <option>Green</option>
+                <option>Yellow</option>
+                <option>Purple</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Log Accomplishment</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- messaging modal  -->
+<div id="message-modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="message-title" class="modal-title"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p id="message-text"></p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>
